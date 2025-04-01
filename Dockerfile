@@ -1,14 +1,14 @@
-# Use official OpenJDK 17 as base image
+# Use the official OpenJDK base image
 FROM openjdk:17
 
-# Set working directory in the container
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy all files into the container
-COPY . .
+# Copy the current directory contents into the container
+COPY . /app
 
 # Compile the Java files
 RUN javac HelloWorld/Main.java HelloWorld/Test.java
 
-# Run the Main class
+# Run the application
 CMD ["java", "HelloWorld.Main"]
